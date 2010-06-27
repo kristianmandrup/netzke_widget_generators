@@ -3,13 +3,7 @@ module Netzke
     def default_config
       super.merge({
         :regions => {
-          :center => {
-            :widget_class_name => "GridPanel",
-            :data_class_name => "<%= data_class %>",
-            :ext_config => {
-              :title => "<%= data_class.pluralize %>"
-            }
-          }
+          <%= regions_js %>
         },
         :ext_config => {
           :header => false
