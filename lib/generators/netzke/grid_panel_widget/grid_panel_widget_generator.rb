@@ -17,7 +17,7 @@ module Netzke
   
       protected
 
-      def class_name
+      def widget_class_name
         name.camelize
       end  
     end

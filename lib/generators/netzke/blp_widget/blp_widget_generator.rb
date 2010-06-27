@@ -5,7 +5,7 @@ module Netzke
     class BlpWidgetGenerator < Rails::Generators::NamedBase
       source_root File.expand_path('../templates', __FILE__)   
 
-      class_option :center,  :type => :string, :desc => 'Center configuration. widget_class:data_class fx GridPanel:Boss'
+      class_option :center,  :type => :string, :desc => 'Center configuration. class_name:model fx GridPanel:Boss'
       class_option :south,  :type => :string, :desc => 'South configuration'
       class_option :north,  :type => :string, :desc => 'North configuration '
       class_option :east,   :type => :string, :desc => 'East configuration'
@@ -28,7 +28,7 @@ module Netzke
         all_regions.each do |region|
           res << %Q{
           :#{region[:name]} => {
-            :widget_class_name => "#{region[:widget_class]}"#{data_class_js(region)}
+            :class_name => "#{region[:class_name]}"#{model_js(region)}
             :ext_config => {
               :title => "#{title(region)}"
             }
@@ -38,13 +38,13 @@ module Netzke
       end
 
       def title region
-        return region[:data_class].pluralize if region[:data_class]      
-        region[:widget_class]
+        return region[:model].pluralize if region[:model]      
+        region[:class_name]
       end
      
-      def data_class_js region
+      def model_js region
         return %Q{,     
-            :data_class_name => "#{region[:data_class]}",} if region[:data_class]        
+            :model_name => "#{region[:model]}",} if region[:model]        
         ""
       end
 
@@ -57,13 +57,13 @@ module Netzke
       end
 
       def get_region region, name
-        widget_class, data_class = region.split(':')
-        region = {:name => name, :widget_class => widget_class}
-        region.merge!(:data_class => data_class) if data_class
+        class_name, model = region.split(':')
+        region = {:name => name, :class_name => class_name}
+        region.merge!(:model => model) if model
         region
       end  
 
-      def class_name
+      def widget_class_name
         name.camelize
       end
     end # class
