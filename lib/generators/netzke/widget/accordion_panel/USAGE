@@ -1,0 +1,8 @@
+Description:
+    Creates an Accordion Panel Netzke widget
+
+Example:
+    rails g netzke:widget:accordion_panel my_accordion
+
+    This will create:
+        lib/netzke/widget/accordion_panel/my_accordion.rb

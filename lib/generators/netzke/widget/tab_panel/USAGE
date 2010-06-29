@@ -1,0 +1,8 @@
+Description:
+    Creates an Tab Panel Netzke widget
+
+Example:
+    rails g netzke:widget:tab_panel my_tab
+
+    This will create:
+        lib/netzke/widget/tab_panel/my_tab.rb

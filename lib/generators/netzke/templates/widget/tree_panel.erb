@@ -1,0 +1,14 @@
+module Netzke::Widget
+  module TreePanel
+    class <%= widget_class_name %> < Base  
+      def default_config
+        super.merge({    
+          :root => {
+            :text => '<%= root_node %>', 
+            :id => 'source'
+          }
+        })
+      end    
+    end
+  end
+end

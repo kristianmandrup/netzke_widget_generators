@@ -1,0 +1,8 @@
+Description:
+    Creates a Form Panel Netzke widget
+
+Example:
+    rails g netzke:widget:form_panel my_form
+
+    This will create:
+        lib/netzke/widget/tree_panel/my_form.rb

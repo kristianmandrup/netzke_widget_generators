@@ -1,0 +1,18 @@
+module Netzke::Widget
+  module FormPanel
+    class <%= widget_class_name %> < Base  
+      def default_config
+        super.merge({
+          :config_tool_available => <%= config_tool? %>,
+          :default_config => {
+            :persistent_config => <%= persistent? %>,
+            :ext_config => {
+              :tools => []
+            }
+          }
+        })
+      end    
+    end
+  end
+end
+

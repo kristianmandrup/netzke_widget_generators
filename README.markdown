@@ -28,15 +28,15 @@ Run bundler
 
 ### Tree widget
 
-<code>rails g tree_widget my_tree --root-node "All Bosses"</code>
+<code>rails g netzke:widget:tree_panel my_tree --root-node "All Bosses"</code>
 
 ### Border Layout Panel
 
-<code>rails g blp_widget my_blp Boss</code>
+<code>rails g netzke:widget:blp my_blp Boss</code>
 
 ### Grid Panel
 
-<code>rails g grid_panel_widget my_grid</code>
+<code>rails g netzke:widget:grid_panel my_grid</code>
 
 ## Note on Patches/Pull Requests
  

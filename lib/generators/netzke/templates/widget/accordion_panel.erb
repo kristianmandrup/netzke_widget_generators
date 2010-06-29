@@ -1,0 +1,12 @@
+module Netzke::Widget
+  module AccordionPanel
+    class <%= widget_class_name %> < Base  
+      def default_config
+        super.merge({    
+          :defaults => {:layout => <%= layout %>}
+        })
+      end    
+    end
+  end
+end
+          

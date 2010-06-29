@@ -1,0 +1,8 @@
+Description:
+    Creates a Tree Panel Netzke widget
+
+Example:
+    rails g netzke:widget:tree_panel my_tree --root-node 'My root'
+
+    This will create:
+        lib/netzke/widget/tree_panel/my_tree.rb
